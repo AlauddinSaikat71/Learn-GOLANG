@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func variable() {
+func variable_primitives() {
 	var i int = 42
 	fmt.Printf(" i = %v  %T\n", i, i)
 
@@ -42,9 +42,31 @@ func variable() {
 	fmt.Println(a << 2)
 	fmt.Println(a >> 2)
 
+	//complex number
+	c := 1 + 2i
+	d := 2 + 5.2i
+	fmt.Println(c + d)
+
+	var complexnumber complex64 = 1 + 2i
+	fmt.Printf("%v  %T\n", real(complexnumber), real(complexnumber))
+	fmt.Printf("%v  %T\n", imag(complexnumber), imag(complexnumber))
+
+	var complexnumber2 complex128 = complex(5, 12)
+	fmt.Printf("%v  %T\n", complexnumber2, complexnumber2)
+
+	//rune
+	var r rune = 'a'
+	fmt.Printf("%v  %T\n", r, r)
+
+}
+
+func constants() {
+	const myConstant1 int = 42
+	fmt.Printf("%v %T\n", myConstant1, myConstant1)
 }
 
 func main() {
 
-	variable()
+	//variable_primitives()
+	constants()
 }
